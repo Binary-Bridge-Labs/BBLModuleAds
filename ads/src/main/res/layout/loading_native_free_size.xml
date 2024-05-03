@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:padding="5dip">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -152,7 +152,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="10dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
         <TextView
             style="@style/AppTheme.Ads"
