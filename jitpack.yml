@@ -1,9 +1,2 @@
-# configuration file for building snapshots and releases with jitpack.io
 jdk:
   - openjdk17
-before_install:
-  - ./scripts/prepareJitpackEnvironment.sh
-install:
-  - FILE="-Dfile=bblAds.aar" #com-atifqamar-customtoast.aar
-  - mvn install:install-file $FILE -DgroupId=com.github.Binary-Bridge-Labs -DartifactId=BBLModuleAds -Dversion=1.0.1.4 -Dpackaging=aar -DgeneratePom=true
-  #com.github.geek-atif                      #com-atifqamar-customtoast  #1.0

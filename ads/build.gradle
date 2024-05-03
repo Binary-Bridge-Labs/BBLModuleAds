@@ -114,18 +114,16 @@ dependencies {
 //    }
 //}
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.Binary-Bridge-Labs'
-            artifactId = 'BBLModuleAds'
-            version = "1.0.2"
-            pom {
-                description = 'First release'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.Binary-Bridge-Labs'
+                artifactId = 'BBLModuleAds'
+                version = '1.0.2'
             }
         }
-    }
-    repositories {
-        mavenLocal()
     }
 }
