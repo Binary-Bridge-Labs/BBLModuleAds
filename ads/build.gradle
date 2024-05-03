@@ -23,10 +23,26 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+// 4. Add below line
+//===============================
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)        // << --- ADD This
     }
 }
+//===============================
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17            // << --- ADD This
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 
 dependencies {
 
@@ -85,15 +101,31 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.Binary-Bridge-Labs'
-                artifactId = 'BBLModuleAds'
-                version = '1.0.1'
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.github.Binary-Bridge-Labs'
+//                artifactId = 'BBLModuleAds'
+//                version = '1.0.1'
+//            }
+//        }
+//    }
+//}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.Binary-Bridge-Labs'
+            artifactId = 'BBLModuleAds'
+            version = "1.0.2"
+            pom {
+                description = 'First release'
             }
         }
+    }
+    repositories {
+        mavenLocal()
     }
 }
