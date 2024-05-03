@@ -1,12 +1,13 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
     }
@@ -82,7 +83,9 @@ dependencies {
     implementation 'com.appsflyer:af-android-sdk:6.8.2'
     implementation 'com.appsflyer:adrevenue:6.4.3'
 
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
+    implementation 'androidx.core:core-ktx:1.10.1'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
 }
 
 afterEvaluate {

@@ -4,14 +4,14 @@ plugins {
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     buildToolsVersion '31.0.0'
 
 
     defaultConfig {
         applicationId "com.bbl.module_ads"
         minSdkVersion 24
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0.0"
         def formattedDate = new Date().format('MMM.dd.yyyy')
@@ -75,7 +75,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:21.1.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation "androidx.core:core-ktx:1.8.0"
+    implementation "androidx.core:core-ktx:1.10.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.core:core-splashscreen:1.0.0-rc01'
     implementation 'androidx.work:work-runtime-ktx:2.7.0'
